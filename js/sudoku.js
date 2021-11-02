@@ -1,62 +1,109 @@
-class Game extends Sudoku {
-  constructor(options) {
-    
-  }
+class Game {
+    constructor(options = {}) {
+        this.difficulty = options.difficulty || "easy";
+    }
 
-  start(el) {
+    start() {
 
-  }
+    }
 
-  reset() {
+    reset() {
 
-  }
+    }
 
-  clean() {
+    clean() {
 
-  }
+    }
 
-  back() {
+    back() {
 
-  }
+    }
 
-  changeOption() {
+    changeOption() {
 
-  }
+    }
 
-  changeTheme() {
+    changeTheme() {
 
-  }
+    }
 
-  suspend() {
+    suspend() {
 
-  }
+    }
 
-  tip() {
+    tip() {
 
-  }
+    }
 
-  erase() {
+    erase() {
 
-  }
+    }
+
+    pencil() {
+
+    }
 }
 
 class Sudoku {
+    row = 3;
+    col = 3;
 
-}
-
-
-function create(el, ) {
-
-}
-
-function fillNumber() {}
-
-function computeArray() {}
-
-function createArena(row, col) {
-  for (let r = 0; r < row; r++) {
-    for (let c = 0; c < col; c++) {
-      app.append()
+    constructor(el) {
+        this.el = document.querySelector(el);
+        this.data = [];
     }
-  }
+
+    // create(el) {
+    //
+    // }
+
+    fillNumber() {
+
+    }
+
+    computeArray() {
+
+
+
+    }
+
+    createArena() {
+        this.cutBox(this.el, "box cell");
+        document.querySelectorAll(".box").forEach((item) => {
+            this.cutBox(item, "cell")
+        })
+    }
+
+    set(coordinate, value) {
+
+    }
+
+    change(coordinate, value) {
+
+    }
+
+    judgeDuplicate(data) {
+        let res = {};
+        data.forEach((item, key) => {
+            if (res[item]) {
+                res[item].push(key)
+            } else {
+                res[item] = []
+            }
+        });
+        return res;
+    }
+
+    cutBox(el, className) {
+        const cellEl = document.createElement("div");
+        cellEl.className = className;
+        for (let r = 0; r < this.row; r++) {
+            for (let c = 0; c < this.col; c++) {
+                cellEl.setAttribute("row", r);
+                cellEl.setAttribute("col", c);
+                el.appendChild(cellEl.cloneNode(true));
+            }
+        }
+    }
+
 }

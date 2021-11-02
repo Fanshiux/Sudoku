@@ -1,0 +1,50 @@
+:root {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    margin: 8rem auto;
+    width: 27rem;
+    height: 27rem;
+    display: flex;
+    flex-flow: wrap;
+    border-radius: .5rem;
+    /*overflow: hidden;*/
+}
+
+#app .cell {
+    width: 33.33333%;
+    border-width: 0;
+    border-style: solid;
+    border-color: #008474;
+    border-left-width: 1px;
+    border-top-width: 1px;
+}
+
+#app .box {
+    display: flex;
+    flex-flow: wrap;
+    border-width: 1px;
+}
+
+/*(1 + n) * 3 - 2*/
+
+/*#app .cell:nth-child(1)*/
+/*!*, #app .cell:nth-child(9), #app .cell:nth-child(72), #app .cell:nth-child(81)*!*/
+/*{*/
+/*    border-top-left-radius: .5rem;*/
+/*}*/
+
+/*#app .cell:nth-child(3n) {*/
+/*    border-right-width: 2px;*/
+/*}*/
+
+/*#app .cell:nth-child(27n) {*/
+/*    border-bottom-width: 2px;*/
+/*}*/
